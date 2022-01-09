@@ -1,11 +1,11 @@
 # How-to
-This template repo builds a container from its Dockerfiles and registers them in GHCR
+This repo builds a debian-latex container env and registers it in GHCR.
 
-It registers multiarch containers and can do staged builds. Staged builds are for when
-you want multiple image tags registered at a single path. This allows you to maintain
-one source repo for many purposes. Sometimes only the base images can be compiled
-multiarch because the higher level images have unsupported dependencies.
+- Drop `docker-compose.yaml` in the root directory of your tex project to use 
+it to run the container entrypoint to compile a tex document into a PDF: 
+`docker compose run texbox file.tex`
+- Outputs are written to the current directory structure
 
-The `docker-compose.yaml` file is an example... Each service can be an additional tag 
-off the main registry path
+Clone this repo, read what it does, and edit `docker-compose.yaml` with the 
+GHCR path of your user namespace so that it uses your trusted containers...
 
