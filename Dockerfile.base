@@ -17,7 +17,7 @@ RUN apt-get update -qq -y && apt-get install --no-install-recommends -qq -y \
         gnupg2 \
         apt-transport-https \
         ca-certificates \
-        texlive texlive-latex-extra texlive-science \
+        texlive texlive-latex-extra texlive-science texlive-font-utils \
     && update-ca-certificates \
     && apt-get -y autoclean \
     && apt-get -y autoremove \
