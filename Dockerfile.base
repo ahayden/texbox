@@ -23,6 +23,10 @@ RUN apt-get update -qq -y && apt-get install --no-install-recommends -qq -y \
     && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/*
 
+ADD make-pdf.sh /usr/local/bin/make-pdf.sh
+
+RUN chmod 0755 /usr/local/bin/make-pdf.sh
+
 RUN adduser --disabled-password ${container_user} \
     && usermod -a -G users ${container_user} 
 
@@ -30,4 +34,4 @@ USER ${container_user}
 
 WORKDIR /data
 
-ENTRYPOINT ["/usr/bin/pdflatex"]
+ENTRYPOINT ["/usr/local/bin/make-pdf.sh"]
