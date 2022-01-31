@@ -3,6 +3,6 @@
 input=${1:=main} ; shift
 
 pdflatex $input
-bibtex $input
+biber $input
 pdflatex $input
 pdflatex $input
