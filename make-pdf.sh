@@ -2,7 +2,7 @@
 
 input=${1:=main} ; shift
 
-pdflatex $input
+pdflatex --enable-write18 $input
 biber $input
-pdflatex $input
-pdflatex $input
+pdflatex --enable-write18 $input
+pdflatex --enable-write18 $input
